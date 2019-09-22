@@ -1,0 +1,36 @@
+spring:
+  datasource:
+    primary:
+      url: jdbc:mysql://127.0.0.1:3306/seller?user=root&password=root&useUnicode=true&characterEncoding=utf-8
+    backup:
+      url: jdbc:mysql://127.0.0.1:3306/seller-backup?user=root&password=root&useUnicode=true&characterEncoding=utf-8
+  #    url: jdbc:h2:mem:manager;DB_CLOSE_ON_EXIT=FALSE
+  jpa:
+    show-sql: true
+  cache:
+    type: hazelcast
+  activemq:
+    broker-url: tcp://127.0.0.1:61616
+    packages:
+      trust-all: true
+
+server:
+  servlet:
+    context-path: /seller
+  port: 8082
+
+swagger2:
+  enable: true
+  groupName: seller
+  basePackage: com.imooc.seller.controller
+
+logging:
+  level:
+    com.googlecode.jsonrpc4j: debug
+
+verification:
+  rootDir: D://verification
+rpc:
+  client:
+    url: http://localhost:8081/manager
+    basePackage: com.imooc.api

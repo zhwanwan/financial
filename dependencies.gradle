@@ -1,0 +1,36 @@
+ext {
+    versions = [
+            springBootVersion: '2.0.0.RELEASE'
+    ]
+    libs = [
+            common   : [
+                    "org.springframework.boot:spring-boot-starter-web:${versions.springBootVersion}",
+                    "org.springframework.boot:spring-boot-starter-data-jpa:${versions.springBootVersion}",
+                    "org.apache.commons:commons-lang3:3.5"
+            ],
+            mysql    : [
+                    "mysql:mysql-connector-java:5.1.6"
+            ],
+            swagger  : [
+                    "io.springfox:springfox-swagger2:2.7.0",
+                    "io.springfox:springfox-swagger-ui:2.7.0"
+            ],
+            jsonrpc  : [
+                    //"com.github.briandilley.jsonrpc4j:jsonrpc4j:1.5.3"
+                    "com.imooc.jsonrpc4j:jsonrpc4j:1.5.3"
+            ],
+            hazelcast: [
+                    "com.hazelcast:hazelcast:3.12.2",
+                    "com.hazelcast:hazelcast-spring:3.12.2"
+            ],
+            rsa      : [
+                    "commons-codec:commons-codec:1.8"
+            ],
+            activemq : [
+                    "org.springframework.boot:spring-boot-starter-activemq:${versions.springBootVersion}"
+            ],
+            test     : [
+                    "org.springframework.boot:spring-boot-starter-test:${versions.springBootVersion}"
+            ]
+    ]
+}

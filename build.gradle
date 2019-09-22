@@ -1,0 +1,39 @@
+group 'com.ddlec'
+version '1.0-SNAPSHOT'
+
+apply from: "$rootDir/dependencies.gradle"
+
+subprojects {
+
+    apply plugin: 'java'
+    apply plugin: 'war'
+
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+
+    repositories {
+        mavenLocal()
+        /*maven {
+            url = 'http://nexus.vfinance.cn:9081/content/groups/public/'
+        }*/
+        mavenCentral()
+    }
+
+    dependencies {
+        implementation libs.common
+        testCompile libs.test
+    }
+
+    /*task "create-dirs" {
+        sourceSets*.java.srcDirs*.each {
+            it.mkdirs()
+        }
+        sourceSets*.resources.srcDirs*.each {
+            it.mkdirs()
+        }
+    }*/
+
+    [compileJava, compileTestJava]*.options*.encoding = 'UTF-8'
+}
+
+
